@@ -1,0 +1,22 @@
+{% extends 'collab/plugin.html' %}
+{% load collab_tags i18n space_tags %}
+
+
+{% block content %}
+<div class="col-md-3">
+  <div class="panel panel-default">
+	<div class="panel-body">
+	 <h3>{{ space.name }}</h3>
+	 <ul class="list-unstyled list-spaced space-plugins">
+	 {% with is_mobile=True %}
+	  {% include 'collab/includes/spaces_links.html' %}
+	{% endwith %}
+	 </ul>
+	</div>	
+  </div>
+</div>
+<div class="col-md-9">
+{% include "spaces_dashboard/includes/activity_stream.html" %}
+</div>
+
+{% endblock content %}
